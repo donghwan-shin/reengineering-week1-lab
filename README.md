@@ -8,10 +8,10 @@
 
 Jump to:
 - [1. Git](#1-git)
-- [2. Python Virtual Envs](2-Python-Virtual-Environments)
-- [3. PyCharm (IDE)](3-PyCharm-IDE)
-- [4. Jupyter Notebooks](4-Jupyter-Notebooks)
-- [5. Simple Exercise](5-Simple-Exercise)
+- [2. Python Virtual Envs](#2-Python-Virtual-Environments)
+- [3. PyCharm (IDE)](#3-PyCharm-IDE)
+- [4. Jupyter Notebooks](#4-Jupyter-Notebooks)
+- [5. Simple Exercise](#5-Simple-Exercise)
 
 
 ## 1. Git
