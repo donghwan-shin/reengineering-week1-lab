@@ -1,12 +1,12 @@
 # Week 1: Getting Started
 
-In this week, we will set up the development environment for this module.
-We will use Git, Python (with virtual environments), PyCharm (IDE), and Jupyter Notebooks.
+- In this week, we will set up the development environment for this module.
+- We will use Git, Python (with virtual environments), PyCharm (IDE), and Jupyter Notebooks.
+- Follow the instructions below to set up your development environment (without cloning this repository).
+- If you are confident about Git, Python virtual envs, IDEs, and Jypyter Notebooks, jump to Section 5. 
 
-Follow the instructions below to set up your development environment (without cloning this repository).
 
-
-## Git
+## 1. Git
 
 To use resources from GitHub, we need to install Git if not yet installed.
 To check if your machine has Git installed, run the following command in your terminal:
@@ -22,7 +22,12 @@ You can download Git from [here](https://git-scm.com/downloads).
 Simply download the installer for your operating system and follow the instructions.
 
 
-## Python Virtual Environments
+
+## 2. Python Virtual Environments
+
+To make it simple, we will use **Anaconda** to manage our Python virtual environments, including multiple Python versions.
+- If you feel confident enough, you can use other tools, such as `pyenv` and `virtualenv`, and skip the rest of this section.
+- However, all the instructions in the following weeks will be based on Anaconda.
 
 Since we will use Python in this module, we need to install Python if not yet installed.
 You can check this by running the following command in your terminal:
@@ -37,10 +42,6 @@ Or, you may want to install multiple Python versions.
 In fact, it is common to have multiple Python versions installed on your machine.
 Furthermore, you may want to install different Python packages for different projects.
 This is why a Python virtual environment is useful.
-
-To make it simple, we will use Anaconda to manage our Python virtual environments, including multiple Python versions.
-If you feel confident enough, you can use other tools, such as `pyenv` and `virtualenv`.
-However, we will not cover these tools in this module, and all the instructions will be based on Anaconda.
 
 ### How to Install Anaconda (10-15 minutes)
 You can download Anaconda from [here](https://www.anaconda.com/download).
@@ -74,10 +75,12 @@ conda activate <env_name>
 
 For more information, have a look at the conda cheat sheet [here](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html).
 
-## PyCharm (IDE)
+
+## 3. PyCharm (IDE)
+
 PyCharm is an IDE (Integrated Development Environment) for Python.
-If you feel comfortable with other IDEs, such as VS Code, you can use them instead.
-However, we will use PyCharm in this module, and all the instructions will be based on PyCharm.
+- If you feel comfortable with other IDEs, such as VS Code, you can use them instead and skip the rest of this section.
+- However, we will use PyCharm in this module, and all the instructions will be based on PyCharm.
 
 ### How to Install PyCharm (5-10 minutes)
 As a student, you are eligible for a free PyCharm Professional license.
@@ -135,9 +138,12 @@ Or, you can use a built-in terminal on the left bottom corner to run the script:
 More information about PyCharm UI is available [here](https://www.jetbrains.com/help/pycharm/guided-tour-around-the-user-interface.html).
 
 
-## Jupyter Notebooks
+## 4. Jupyter Notebooks
+
 Jupyter Notebook is a web-based interactive development environment.
-Often we will give you a Jupiter Notebook file (`.ipynb`) for each lab session.
+- If you are already familiar with Jupyther Notebooks, you can skip the rest of this section.
+
+Often we will give you a Jupiter Notebook file (`.ipynb`) for each hands-on exercise.
 You should know how to run a Jupyter Notebook file.
 
 In fact, it's simple. You can simply double-click a Jupyter Notebook file to open it in PyCharm.
@@ -156,11 +162,14 @@ Note that you must activate your working Python virtual environment before insta
 
 Enjoy running Jupyter Notebook files in PyCharm!
 
-## Simple Exercise
+
+## 5. Simple Exercise
 
 Now, you have set up your development environment.
-To check if everything works well, please edit line 3 of `hello.py` to print `Hello World!`.
+
+To check if everything works well, please edit line 3 of `hello.py` to print `Hello Reengineering`.
 Then, run the script and check if it is printed correctly.
+
 ![img.png](misc/img7.png)
 
 Finally, push your code to your repository, so we can see if you've done it.
