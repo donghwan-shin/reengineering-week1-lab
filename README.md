@@ -175,7 +175,7 @@ Enjoy running Jupyter Notebook files in PyCharm!
 
 Now, you have set up your development environment.
 
-To check if everything works well, please edit line 3 of `hello.py` to print `Hello Reengineering`.
+To check if everything works well, please *only* edit line 2 of `hello.py` to print `Hello Reengineering`.
 Then, run the script and check if it is printed correctly.
 
 ![img.png](misc/img7.png)
