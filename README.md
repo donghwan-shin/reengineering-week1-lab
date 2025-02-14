@@ -33,9 +33,9 @@ Simply download the installer for your operating system and follow the instructi
 
 ## 2. Python Virtual Environments
 
-To make it simple, we will use **Anaconda** to manage our Python virtual environments, including multiple Python versions.
-- If you feel confident enough, you can use other tools, such as `pyenv` and `virtualenv`, and skip the rest of this section.
-- However, all the instructions in the following weeks will be based on Anaconda.
+To make it simple, we will use `venv` to manage our Python virtual environments.
+- If you feel confident enough, you can use other tools, such as `anaconda`, and skip the rest of this section.
+- However, all the instructions in the following weeks will be based on `venv`.
 
 Since we will use Python in this module, we need to install Python if not yet installed.
 You can check this by running the following command in your terminal:
@@ -44,44 +44,16 @@ You can check this by running the following command in your terminal:
 python --version
 ```
 
-If you get an error, you should install Python.
-Even without an error, you may want to install another version of Python.
-Or, you may want to install multiple Python versions.
-In fact, it is common to have multiple Python versions installed on your machine.
-Furthermore, you may want to install different Python packages for different projects.
-This is why a Python virtual environment is useful.
+If you get an error, you should install Python: https://www.python.org/downloads/
 
-### How to Install Anaconda (10-15 minutes)
-You can download Anaconda from [here](https://www.anaconda.com/download).
-Simply download the installer for your operating system and follow the instructions.
-If successfully installed, you should be able to run the following command in your terminal:
+Otherwise, you are ready to use `venv`. 
 
-```bash
-conda info
-```
+> The venv module supports creating lightweight “virtual environments”, each with their own independent set of Python packages installed in their site directories. A virtual environment is created on top of an existing Python installation, known as the virtual environment’s “base” Python, and may optionally be isolated from the packages in the base environment, so only those explicitly installed in the virtual environment are available. (from the [official Python3 venv documentation](https://docs.python.org/3/library/venv.html))
 
-### How to Use Anaconda
-You can create a new Python virtual environment, activate one of the existing environments, and install Python packages in the active environment.
-To check the list of available environments, run the following command:
+Check out [Creating virtual environments](https://docs.python.org/3/library/venv.html#creating-virtual-environments)
+and [How venvs work](https://docs.python.org/3/library/venv.html#how-venvs-work). 
 
-```bash
-conda env list
-```
-
-To create a new environment, run the following command:
-
-```bash
-conda create --name <env_name> python=<python_version>
-```
-For example, you can use `conda create --name week1 python=3.9` to create a new environment named `week1` with Python 3.9.
-
-To activate an environment, run the following command:
-
-```bash
-conda activate <env_name>
-```
-
-For more information, have a look at the conda cheat sheet [here](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html).
+If you use PyCharm (see below), you don't need to manually create and manage `venv`; PyCharm will do it for you.
 
 
 ## 3. PyCharm (IDE)
@@ -100,50 +72,15 @@ After installing PyCharm, you need to restart your computer.
 
 
 ### How to Use PyCharm
-In PyCharm, you can create a new project from a Git repository, set up a Python virtual environment, and run Python scripts easily.
 
-If you open PyCharm, you will be a screen like this:
-![img.png](misc/img1.png)
+To quickly overview PyCharm, see [Quick Start Guide](https://www.jetbrains.com/help/pycharm/getting-started.html).
 
-You can Open an existing project or Create a new project.
-Or, you can get an existing project from a GitHub repository by clicking on `Get from VCS`.
+You can refer to [Create and Run Your First Project](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html) to get more detailed guidelines to create and run a project in PyCharm.
 
-Since this repository (the one you are reading) is a working repository, you should create a new project from this repository.
-(Here, if your machine does not have `git` installed, you will see `download and install git`; please do it first).
-
-If `Get from VCS` does not work well, you can clone this repository somehow (e.g., using your terminal) and use `Open` instead.
-
-Once you open a new project (either via `Open` or `Get from VCS`), you will see a screen like this:
-
-Note that there is "No Interpreter" in the bottom right corner.
-Without a specified Python interpreter, you cannot run Python scripts in this project.
-Therefore, for every new project, you should set up a Python interpreter, which can be done by setting up a Python virtual environment.
-
-If an automatic prompt appears, just follow it to set up a Python virtual environment.
-Otherwise, go to "Settings" as shown below:
-![img.png](misc/img2.png)
-
-Then, go to "Project: <project_name>" -> "Python Interpreter" as shown below:
-![img.png](misc/img3.png)
-
-Click "Add Interpreter" and select "Add a local interpreter".
-Among various options, select "Conda Environment" and "Create new environment".
-Then, enter the name of the new environment (e.g., Reengineering), select the Python version you want to use (e.g., Python 3.9), and click "OK".
-![img.png](misc/img4.png)
-
-It will take some time to create a new Python virtual environment.
-Later weeks, you can simply use the existing Python virtual environment (e.g., Reengineering) for other projects, unless a new clean environment is needed.
-
-Once the Python virtual environment is created, you will see the Python interpreter in the bottom right corner.
-![img.png](misc/img5.png)
-
-Now, you can run Python scripts in this project.
-Try to run `hello.py` by right-clicking on the file and selecting `Run 'hello'`.
-
-Or, you can use a built-in terminal on the left bottom corner to run the script:
-![img.png](misc/img6.png)
-
-More information about PyCharm UI is available [here](https://www.jetbrains.com/help/pycharm/guided-tour-around-the-user-interface.html).
+As an exercise, clone this repository to your local machine and open it in PyCharm.
+While you are opening the repository, PyCharm will ask you to create a Python virtual environment.
+You can simply click "Create" to let PyCharm create a project-specific Python virtual environment for you.
+You can then run the `hello.py` script to check if everything works well.
 
 
 ## 4. Jupyter Notebooks
@@ -160,7 +97,7 @@ Then, you can run each cell by clicking the "Run" button on the left side of the
 However, before you do anything, you should first install `jupyter` in your Python virtual environment.
 PyCharm will ask you to install `jupyter` if you try to run a Jupyter Notebook file without `jupyter` installed.
 You can simply click "Install Jupyter" to let PyCharm sorts it out for you.
-Alternatively, you can install `jupyter` manually by running the following command in your terminal:
+Alternatively, you can install `jupyter` manually by running the following command in your terminal (after activating your Python virtual environment; this is done automatically in PyCharm, but you should do it manually in your terminal):
 
 ```bash
 pip install jupyter
