@@ -3,15 +3,16 @@
 - In this week, we will set up the development environment for this module.
 - We will use Git, Python (with virtual environments), PyCharm (IDE), and Jupyter Notebooks.
 - Follow the instructions below to set up your development environment (without cloning this repository).
-- If you are confident about Git, Python virtual envs, IDEs, and Jypyter Notebooks, jump to Section 5. 
+- If you are confident about Git, Python virtual envs, IDEs, and Jupyter Notebooks, jump to Section 5. 
 
 
 Jump to:
-- [1. Git](#1-git)
-- [2. Python Virtual Envs](#2-Python-Virtual-Environments)
-- [3. PyCharm (IDE)](#3-PyCharm-IDE)
-- [4. Jupyter Notebooks](#4-Jupyter-Notebooks)
-- [5. Simple Exercise](#5-Simple-Exercise)
+- [Week 1: Getting Started](#week-1-getting-started)
+  - [1. Git](#1-git)
+  - [2. Python \& Virtual Environments](#2-python--virtual-environments)
+  - [3. PyCharm (IDE)](#3-pycharm-ide)
+  - [4. Jupyter Notebooks](#4-jupyter-notebooks)
+  - [5. Simple Exercise](#5-simple-exercise)
 
 
 ## 1. Git
@@ -30,13 +31,16 @@ You can download Git from [here](https://git-scm.com/downloads).
 Simply download the installer for your operating system and follow the instructions.
 
 
+## 2. Python & Virtual Environments
 
-## 2. Python Virtual Environments
+### Getting started
 
-To make it simple, we will use `venv` to manage our Python virtual environments.
-- If you feel confident enough, you can use other tools, such as `anaconda`, and skip the rest of this section.
-- However, all the instructions in the following weeks will be based on `venv`.
+Virtual environments are a way to create isolated Python environments for different projects.
 
+To make it simple, we will use Pythons inbuilt [`venv`](https://docs.python.org/3/library/venv.html) module to create our Python virtual environments.
+- All the instructions in the following weeks will be based on `venv` for Python 3.12
+- If you feel confident enough, you can use other tools, such as `anaconda` or `uv`, to manage Python dependencies but please checkout the [FAQ](#virtual-environments-faq)
+  
 Since we will use Python in this module, we need to install Python if not yet installed.
 You can check this by running the following command in your terminal:
 
@@ -48,18 +52,88 @@ If you get an error, you should install Python: https://www.python.org/downloads
 
 Otherwise, you are ready to use `venv`. 
 
-> The venv module supports creating lightweight “virtual environments”, each with their own independent set of Python packages installed in their site directories. A virtual environment is created on top of an existing Python installation, known as the virtual environment’s “base” Python, and may optionally be isolated from the packages in the base environment, so only those explicitly installed in the virtual environment are available. (from the [official Python3 venv documentation](https://docs.python.org/3/library/venv.html))
+Virtual enviroments or (venvs) keeps project dependencies i.e., pakcages installed by `pip install` separated from the system Python and other venvs.
 
-Check out [Creating virtual environments](https://docs.python.org/3/library/venv.html#creating-virtual-environments)
-and [How venvs work](https://docs.python.org/3/library/venv.html#how-venvs-work). 
+To create a new venv, you can run the following command in your terminal:
 
-If you use PyCharm (see below), you don't need to manually create and manage `venv`; PyCharm will do it for you.
+```bash
+python -m venv .venv
+```
+
+Once your venv is created, you can activate it by running the following command:
+
+```sh
+source .venv/bin/activate # On Linux/Mac
+```
+
+```ps 
+.venv\Scripts\Activate # On Windows
+```
+To verify if your venv is active you can run:
+```sh
+which python # On Linux/Mac
+```
+```ps
+where python # On Windows
+```
+
+It should return the path to the Python executable in your venv, which is usually something like `yourdirectory/.venv/bin/python` (Linux/Mac) or `yourdirectory\.venv\Scripts\python.exe` (Windows).
+
+> [!NOTE]
+> If you use PyCharm (see below), you probably don't need to manually create and manage `venv`; PyCharm should do it for you.
+
+Once the venv has been activated, you can install Python packages using `pip install`:
+```sh
+pip install jupyter # Needed to run jupyter notebooks
+```
+For most lab materials, we will provide a `requirements.txt` file, which lists all the required Python packages for the lab session. To install them run:
+
+```sh
+pip install -r requirements.txt
+```
+
+For more information about `venv`, refer to the official documentation: https://docs.python.org/3/library/venv.html
+
+### Virtual environments FAQ
+
+#### When do I need to use virtual environments?
+You should always use a virtual environment for your Python projects, especially when you have multiple project.
+
+
+#### What happens if I DON'T use virtual environments?
+You will install Python packages system-wide, which may cause conflicts between different projects, other system installs, and even your operating system. It is difficult to debug if things go wrong.
+With virtual environments, you can always delete the `.venv` folder and start fresh.
+
+
+#### Can I use the same venv for multiple projects?
+You can, but it's not recommended. A clean approach is to create a new venv for each project.
+
+
+#### I don't have Python 3.12 installed, can I use other versions of Python?
+You should be fine with any Python >3.11 but we tested all the code in this module with Python 3.12.
+
+#### The legacy code base I want to run is requiring different Python version, what should I do?
+
+You have two options:
+- You can install requested python version and create a venv with that python version.
+- You can use `conda` or `uv` to manage multiple python versions and create venvs with different python versions.
+  
+#### Why not use `conda` or `uv` to manage Python dependencies?
+- `conda` is a heavyweight dependency, usually not needed for most Python projects.
+- `uv` is a new promissing tool but it doesn't support legacy python versions <3.8, which may be required for the module.
+
+#### I messed up my installation, what should I do?
+First delete the `.venv` folder and start over, create a fresh venv and install the required packages again.
+
+Ask demonstrators for help.
+
+
 
 
 ## 3. PyCharm (IDE)
 
 PyCharm is an IDE (Integrated Development Environment) for Python.
-- If you feel comfortable with other IDEs, such as VS Code, you can use them instead and skip the rest of this section.
+- If you feel comfortable with other editors, such as VSCode, you can use them instead and skip the rest of this section.
 - However, we will use PyCharm in this module, and all the instructions will be based on PyCharm.
 
 ### How to Install PyCharm (5-10 minutes)
@@ -86,7 +160,7 @@ You can then run the `hello.py` script to check if everything works well.
 ## 4. Jupyter Notebooks
 
 Jupyter Notebook is a web-based interactive development environment.
-- If you are already familiar with Jupyther Notebooks, you can skip the rest of this section.
+- If you are already familiar with Jupyter Notebooks, you can skip the rest of this section.
 
 Often we will give you a Jupiter Notebook file (`.ipynb`) for each hands-on exercise.
 You should know how to run a Jupyter Notebook file.
