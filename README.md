@@ -41,7 +41,7 @@ To make it simple, we will use Pythons inbuilt [`venv`](https://docs.python.org/
 - All the instructions in the following weeks will be based on `venv` for Python 3.12
 - If you feel confident enough, you can use other tools, such as `anaconda` or `uv`, to manage Python dependencies but please checkout the [FAQ](#virtual-environments-faq)
   
-Since we will use Python in this module, we need to install Python if not yet installed.
+Since we will use Python in this module, we need to install Python if it is not already installed.
 You can check this by running the following command in your terminal:
 
 ```bash
@@ -69,7 +69,7 @@ source .venv/bin/activate # On Linux/Mac
 ```ps 
 .venv\Scripts\Activate # On Windows
 ```
-To verify if your venv is active you can run:
+To verify if your venv is active, you can run:
 ```sh
 which python # On Linux/Mac
 ```
@@ -84,7 +84,7 @@ It should return the path to the Python executable in your venv, which is usuall
 
 Once the venv has been activated, you can install Python packages using `pip install`:
 ```sh
-pip install jupyter # Needed to run jupyter notebooks
+pip install jupyter # Needed to run Jupyter notebooks
 ```
 For most lab materials, we will provide a `requirements.txt` file, which lists all the required Python packages for the lab session. To install them run:
 
@@ -97,11 +97,12 @@ For more information about `venv`, refer to the official documentation: https://
 ### Virtual environments FAQ
 
 #### When do I need to use virtual environments?
-You should always use a virtual environment for your Python projects, especially when you have multiple project.
+You should always use a virtual environment for your Python projects, especially when you have multiple projects.
 
 
 #### What happens if I DON'T use virtual environments?
-You will install Python packages system-wide, which may cause conflicts between different projects, other system installs, and even your operating system. It is difficult to debug if things go wrong.
+You will install Python packages system-wide, which may cause conflicts with other projects, system-installed packages, and even your operating system. 
+It is difficult to debug if things go wrong.
 With virtual environments, you can always delete the `.venv` folder and start fresh.
 
 
@@ -109,25 +110,21 @@ With virtual environments, you can always delete the `.venv` folder and start fr
 You can, but it's not recommended. A clean approach is to create a new venv for each project.
 
 
-#### I don't have Python 3.12 installed, can I use other versions of Python?
-You should be fine with any Python >3.11 but we tested all the code in this module with Python 3.12.
+#### I don't have Python 3.12 installed. Can I use other versions of Python?
+You should be fine with any Python >3.11, but we tested all the code in this module with Python 3.12.
 
 #### The legacy code base I want to run is requiring different Python version, what should I do?
-
 You have two options:
-- You can install requested python version and create a venv with that python version.
-- You can use `conda` or `uv` to manage multiple python versions and create venvs with different python versions.
+- You can install the requested Python version and create a venv with that Python version.
+- You can use `conda` or `uv` to manage multiple Python versions and create venvs with different Python versions.
   
-#### Why not use `conda` or `uv` to manage Python dependencies?
+#### Why not use `conda` or `uv` to manage Python dependencies from the first place?
 - `conda` is a heavyweight dependency, usually not needed for most Python projects.
-- `uv` is a new promissing tool but it doesn't support legacy python versions <3.8, which may be required for the module.
+- `uv` is a new promising tool, but it doesn't support legacy Python versions <3.8, which may be required for the module.
 
-#### I messed up my installation, what should I do?
-First delete the `.venv` folder and start over, create a fresh venv and install the required packages again.
-
-Ask demonstrators for help.
-
-
+#### I messed up my installation. What should I do?
+Delete the `.venv` folder, then create a fresh venv and install the required packages again.
+Ask TAs for help if the issue persists.
 
 
 ## 3. PyCharm (IDE)
@@ -149,7 +146,7 @@ After installing PyCharm, you need to restart your computer.
 
 To quickly overview PyCharm, see [Quick Start Guide](https://www.jetbrains.com/help/pycharm/getting-started.html).
 
-You can refer to [Create and Run Your First Project](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html) to get more detailed guidelines to create and run a project in PyCharm.
+You can refer to [Create and Run Your First Project](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html) to get more detailed guidelines on creating and running a project in PyCharm.
 
 As an exercise, clone this repository to your local machine and open it in PyCharm.
 While you are opening the repository, PyCharm will ask you to create a Python virtual environment.
@@ -170,7 +167,7 @@ Then, you can run each cell by clicking the "Run" button on the left side of the
 
 However, before you do anything, you should first install `jupyter` in your Python virtual environment.
 PyCharm will ask you to install `jupyter` if you try to run a Jupyter Notebook file without `jupyter` installed.
-You can simply click "Install Jupyter" to let PyCharm sorts it out for you.
+You can simply click "Install Jupyter" to let PyCharm sort it out for you.
 Alternatively, you can install `jupyter` manually by running the following command in your terminal (after activating your Python virtual environment; this is done automatically in PyCharm, but you should do it manually in your terminal):
 
 ```bash
@@ -194,7 +191,7 @@ Then, run the script and check if it is printed correctly.
 Finally, push your code to your repository, so we can see if you've done it.
 To commit and push your change, you can use either PyCharm or your terminal.
 
-In the build-in terminal, you can run the following commands:
+In the built-in terminal, you can run the following commands:
 
 ```bash
 git add hello.py
